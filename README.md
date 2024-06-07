@@ -1,2 +1,0 @@
-# prog
-student prog
