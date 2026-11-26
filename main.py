@@ -13,12 +13,15 @@ window.title("Student Housing Management Application")
 window.geometry("1200x800")
 
 # Background Image
-background_image_path = "background.jpg"  # Ensure this image is in the same directory
-background_image = Image.open(background_image_path)
-background_photo = ImageTk.PhotoImage(background_image)
-
-background_label = tk.Label(window, image=background_photo)
-background_label.place(relwidth=1, relheight=1)
+background_image_path = "background.jpg"  # Optional: place this image in the same directory
+try:
+    background_image = Image.open(background_image_path)
+    background_photo = ImageTk.PhotoImage(background_image)
+    background_label = tk.Label(window, image=background_photo)
+    background_label.place(relwidth=1, relheight=1)
+except (FileNotFoundError, OSError):
+    # No background image available: continue with the plain window.
+    window.configure(bg='#ffffff')
 
 # Background frame to hold all widgets on top of the background image
 main_frame = tk.Frame(window, bg='#ffffff')
