@@ -77,6 +77,6 @@ User-Information-Application/
 ## Notes
 
 - `new.py` is the application this README describes (registration and login with bcrypt hashing, SQLite file `user_data.db`, Student/Owner listings). Run it with `python new.py`.
-- `main.py` is an earlier, separate "Student Housing Management" prototype. It has no login or password handling, uses `housing_extended.db`, and expects a `background.jpg` in the same folder (not included in this repository), so it exits at startup without that file.
+- `main.py` is an earlier, separate "Student Housing Management" prototype. It has no login or password handling, uses `housing_extended.db`, and uses an optional `background.jpg` in the same folder (not included in this repository); without it the window opens with a plain white background.
 - `requirements.txt` lists the packages both scripts import. `sqlite3` and `tkinter` come with Python (on some Linux systems install the `python3-tk` package).
-- These scripts compile (`python -m py_compile`) and their non-GUI dependencies install. The GUI itself was not launched in a test environment (no Tk display available).
+- These scripts compile (`python -m py_compile`) and their non-GUI dependencies install. The missing-image fallback in `main.py` was checked only by compiling it and confirming that Pillow raises the exception it catches. The GUI itself was not launched in a test environment (Tk was not available).
