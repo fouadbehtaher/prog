@@ -1,0 +1,6 @@
+Pillow
+bcrypt
+ttkbootstrap
+pandas
+numpy
+matplotlib
